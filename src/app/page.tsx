@@ -1,59 +1,75 @@
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <div className="font-sans min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-8 pb-20">
-        <main className="max-w-3xl w-full flex flex-col gap-10 items-center text-center py-16">
-          <Image
-            src="/logo.svg"
-            alt="IEE Website Logo"
-            width={80}
-            height={80}
-            className="mb-4"
-            priority
-          />
-          <h1 className="text-5xl font-extrabold text-blue-900 dark:text-blue-200 mb-4">
-            Welcome to IEE Website
-          </h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Empowering our community with events, resources, and connections.
-            Explore our site to learn more about us, view our gallery, and get in
-            touch!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/about"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition"
-            >
-              About Us
-            </a>
-            <a
-              href="/events"
-              className="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition"
-            >
-              Events
-            </a>
-            <a
-              href="/gallery"
-              className="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition"
-            >
-              Gallery
-            </a>
-            <a
-              href="/contact"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition"
-            >
-              Contact Us
-            </a>
+    <div className="min-h-screen flex flex-col bg-gray-900">
+      {/* Header */}
+      <header className="w-full bg-[#232846] py-4 px-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Image src="/file.svg" alt="IEEE Logo" width={60} height={60} />
+          <div className="flex flex-col">
+            <span className="text-white font-bold text-lg">IEEE</span>
+            <span className="text-yellow-300 text-xs">
+              Bits Pilani Dubai Campus
+            </span>
+            <span className="text-white text-xs">IEEE Student Branch</span>
           </div>
-        </main>
-        <footer className="mt-auto py-6 text-gray-500 dark:text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} IEE Website. All rights reserved.
-        </footer>
-      </div>
-    </>
+        </div>
+        <nav className="mt-4 md:mt-0 flex gap-8 text-white text-base">
+          <a
+            href="/"
+            className="text-green-400 font-semibold"
+          >
+            Home
+          </a>
+          <a
+            href="/about"
+            className="hover:text-green-400 transition"
+          >
+            About Us
+          </a>
+          <a
+            href="#"
+            className="hover:text-green-400 transition"
+          >
+            IEEE Benefits
+          </a>
+          <a
+            href="/events"
+            className="hover:text-green-400 transition"
+          >
+            Our Events
+          </a>
+          <a
+            href="#"
+            className="hover:text-green-400 transition"
+          >
+            Our Team
+          </a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section
+        className="relative flex-1 flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center"
+        style={{ backgroundImage: "url(/globe.svg)" }}
+      >
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
+        <div className="relative z-10 flex flex-col items-center justify-center">
+          <h1 className="text-white text-5xl md:text-6xl font-bold mb-4">
+            IEEE BPDC
+          </h1>
+          <p className="text-white text-lg md:text-xl mb-6 max-w-2xl">
+            Institute of Electrical and Electronics Engineers - BITS Pilani Dubai Campus
+          </p>
+          <a
+            href="#"
+            className="bg-black hover:bg-gray-800 text-white font-semibold px-8 py-3 rounded-lg shadow mb-8 transition"
+          >
+            JOIN OUR STUDENT BRANCH
+          </a>
+        </div>
+      </section>
+    </div>
   );
 }
